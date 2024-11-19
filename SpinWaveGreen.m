@@ -82,9 +82,9 @@ for f=ff
     mu=mu;
     B=1;
     BE = 1./(B*exp((hbar*2*pi*(abs(f*1e9)-mu))/(kb*T))-1);
-    RJ = hbar*2*pi*(abs(f*1e9)./(hbar*2*pi*(abs(f*1e9)-mu)));
+    % RJ = hbar*2*pi*(abs(f*1e9)./(hbar*2*pi*(abs(f*1e9)-mu)));
 %     f00fkx(i,:,:) = ((BE.^2*(w00.^2+w.^2))./(abs(w00.^2-w.^2).^2+(4./lifetime).^2.*w.^2) + (BE.^2*(w00.^2+w.^2))./(abs(w00.^2+w.^2).^2+(4./lifetime).^2.*w.^2));
-    f00fkx(i,:,:) = BE./(abs(w00-w).^2+(2./lifetime).^2);
+    f00fkx(i,:,:) = sqrt(BE)./(abs(w00-w).^2+(2./lifetime).^2);
 %     f00fkx(i,:,:) = BE./(4*pi^2*abs(f00-f).^2+(2./lifetime).^2); 
         
 %     sgtitle(sprintf('Frequency: %.2f GHz',f))
